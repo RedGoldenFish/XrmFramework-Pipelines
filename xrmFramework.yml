@@ -86,6 +86,14 @@ variables:
     value: 'Release'
 
 stages:
+  - stage: Test
+    displayName: Override Test
+    jobs:
+      - job: Say Hello
+        steps: 
+          - script: echo Hello, world!
+            displayName: 'Run a one-line script'
+            
   - stage: Preparation
     displayName: Build and extract
     jobs:
